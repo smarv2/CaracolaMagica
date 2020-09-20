@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <ImageButton
@@ -23,10 +24,11 @@
         android:id="@+id/textEscribePregunta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-black"
         android:text="@string/escribe_tu_pregunta_y_toca_la_caracola_magica"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
+        android:textColor="#FFFF00"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botonSalir" />
@@ -36,56 +38,55 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="text"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEscribePregunta"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/textEscribePregunta" />
 
     <ImageButton
         android:id="@+id/botonPregunta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         android:layout_marginTop="8dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/imagen_caracola"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPregunta"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/caracolatrnasparente" />
+        app:layout_constraintVertical_bias="0.126"
+        app:srcCompat="@drawable/caracola_hd"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/botonSeguir"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fb_icon" />
 
     <TextView
-        android:id="@+id/textPowered"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/powered_by_digital_stone_and_mariowolfx"
-        android:textColor="@color/colorPrimaryText"
-        android:textSize="12sp"
+        android:fontFamily="serif"
+        android:shadowColor="#295396"
+        android:text="Sigueme ;)"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textVersion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/version"
-        android:textColor="@color/colorIcons"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/botonSeguir" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

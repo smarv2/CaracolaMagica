@@ -2,8 +2,13 @@ package com.mx.digitalstonemx.caracolamagica;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -15,8 +20,13 @@ import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    /*public static String FACEBOOK_URL = "https://www.facebook.com/MarioWolfXOficial";
+    public static String FACEBOOK_PAGE_ID = "MarioWolfXOficial";*/
+
     private ImageButton btnPreguntar;
     private ImageButton btnSalir;
+    private ImageButton btnSeguir;
     private TextView textViewPregunta;
     //private final String GREETER = "Hola desde el otro lado";
     private String PREGUNTA = "";
@@ -37,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //se setea el icono de la aplicacion.
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        /*getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);*/
 
         //Se crea vector de Sonidos
         //Se agregan respuestas
@@ -64,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         vectormp[++indice] = MediaPlayer.create(this, R.raw.caracola_z_respuesta_easter_egg2);
 
         //Bienvenida al programa
-        Toast.makeText(MainActivity.this, "Hola :)", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(MainActivity.this, "Hola :)", Toast.LENGTH_SHORT).show();
         vectormp[longitudMp + Constantes.BIENVENIDA].start();
 
         //Se agrega funcionalidad al boton Preguntar
@@ -112,9 +122,28 @@ public class MainActivity extends AppCompatActivity {
         btnSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Bye :(", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "Bye :(", Toast.LENGTH_SHORT).show();
                 vectormp[longitudMp + Constantes.SALIR].start();
                 finish();
+
+            }
+        });
+
+        //Se agrega funcionalidad al boton Seguir
+        btnSeguir = (ImageButton) findViewById(R.id.botonSeguir);
+        btnSeguir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String facebookId = "fb://page/2389396411112671";
+                String urlPage = "https://www.facebook.com/MarioWolfXOficial";
+
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(facebookId )));
+                } catch (Exception e) {
+                    //Abre url de pagina.
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(urlPage)));
+                }
 
             }
         });
@@ -162,6 +191,5 @@ public class MainActivity extends AppCompatActivity {
         continua = true;
         return continua;
     }
-
 
 }
