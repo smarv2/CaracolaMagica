@@ -84,7 +84,7 @@
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="serif"
-        android:shadowColor="#295396"
+        android:shadowColor="#FFFFFF"
         android:text="Sigueme ;)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/botonSeguir" />
