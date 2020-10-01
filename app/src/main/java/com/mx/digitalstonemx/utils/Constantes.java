@@ -2,7 +2,6 @@ package com.mx.digitalstonemx.utils;
 
 public class Constantes {
 
-
     /**
      * Campo RESPUESTA_DEBES_PREGUNTAR de tipo int.
      */
