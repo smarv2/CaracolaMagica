@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     //Se crea vector con la posicion de respuestas aleatoras mas las fijas como sonidos de inicio, cierre , instrucciones y esater eggs
     MediaPlayer vectormp [] = new MediaPlayer[longitudMp + 6];
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //se oculta el action bar

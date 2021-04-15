@@ -7,8 +7,8 @@ android {
         applicationId "com.mx.digitalstonemx.caracolamagica"
         minSdkVersion 17
         targetSdkVersion 29
-        versionCode 22
-        versionName "2.2"
+        versionCode 24
+        versionName "2.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
